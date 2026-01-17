@@ -2,6 +2,15 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function updateSession(request: NextRequest) {
+    // TEMPORARY DEBUG: Bypass all Supabase logic to verify if this fixes the crash.
+    // If this deploys successfully, we know the issue is in the Supabase client creation or env vars.
+    return NextResponse.next({
+        request: {
+            headers: request.headers,
+        },
+    });
+
+    /*
     try {
         let response = NextResponse.next({
             request: {
@@ -14,7 +23,6 @@ export async function updateSession(request: NextRequest) {
 
         if (!supabaseUrl || !supabaseAnonKey) {
             console.error("Supabase environment variables are missing in middleware!");
-            // Return a valid response to avoid crashing, but auth won't work
             return response;
         }
 
@@ -51,7 +59,6 @@ export async function updateSession(request: NextRequest) {
             return NextResponse.redirect(new URL("/login", request.url));
         }
 
-        // If user is logged in, but tries to access auth pages, redirect to dashboard
         if (user && (request.nextUrl.pathname.startsWith("/login") || request.nextUrl.pathname.startsWith("/signup"))) {
             return NextResponse.redirect(new URL("/dashboard", request.url));
         }
@@ -59,11 +66,11 @@ export async function updateSession(request: NextRequest) {
         return response;
     } catch (e) {
         console.error("Middleware error:", e);
-        // Return next to avoid blocking the request on error
         return NextResponse.next({
             request: {
                 headers: request.headers,
             },
         });
     }
+    */
 }
