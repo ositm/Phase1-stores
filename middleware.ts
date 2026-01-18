@@ -2,9 +2,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
-    // Log to seeing if this is actually running
     console.log("Safe middleware running for:", request.nextUrl.pathname);
-    return NextResponse.next();
+    const response = NextResponse.next();
+    response.headers.set("x-deployment-id", "debug-v3-root");
+    return response;
 }
 
 export const config = {
