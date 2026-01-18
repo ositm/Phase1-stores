@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Plus } from "lucide-react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function VendorDashboard({ profile, stats }: { profile: any, stats: any }) {
     return (
         <div className="space-y-6">

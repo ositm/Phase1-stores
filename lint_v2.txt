@@ -1,0 +1,22 @@
+﻿
+> phase1@0.1.0 lint
+> eslint
+
+
+C:\Users\user\Desktop\apps\phase1\src\app\dashboard\page.tsx
+  19:35  warning  'error' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\Desktop\apps\phase1\src\components\dashboard\buyer-view.tsx
+  8:34  warning  'profile' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\Desktop\apps\phase1\src\components\marketplace\product-card.tsx
+  2:29  warning  'CardFooter' is defined but never used     @typescript-eslint/no-unused-vars
+  2:41  warning  'CardHeader' is defined but never used     @typescript-eslint/no-unused-vars
+  4:10  warning  'MessageCircle' is defined but never used  @typescript-eslint/no-unused-vars
+  5:10  warning  'Button' is defined but never used         @typescript-eslint/no-unused-vars
+
+C:\Users\user\Desktop\apps\phase1\src\lib\supabase\session.ts
+  1:10  warning  'createServerClient' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 7 problems (0 errors, 7 warnings)
+

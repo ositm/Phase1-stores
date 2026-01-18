@@ -94,7 +94,7 @@ export async function addProduct(formData: FormData) {
         const fileName = `${user.id}/${Math.random()}.${fileExt}`;
 
         // Upload image
-        const { error: uploadError, data } = await supabase.storage
+        const { error: uploadError } = await supabase.storage
             .from("products")
             .upload(fileName, imageFile);
 
@@ -186,7 +186,7 @@ export async function updateProduct(formData: FormData) {
     const category = formData.get("category") as string;
     const imageFile = formData.get("image") as File;
 
-    const updates: any = {
+    const updates: Record<string, string | number | null> = {
         title,
         description,
         price,

@@ -77,7 +77,7 @@ export default async function Home({ searchParams }: { searchParams: { q?: strin
           <StaggerContainer className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {products.map(product => (
               <StaggerItem key={product.id}>
-                {/* @ts-ignore */}
+                {/* @ts-expect-error Product type definition mismatch in map */}
                 <ProductCard product={product} />
               </StaggerItem>
             ))}

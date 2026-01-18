@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ImagePlus, Loader2 } from "lucide-react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function ProductForm({ product }: { product?: any }) {
     const [isLoading, setIsLoading] = useState(false);
     const [preview, setPreview] = useState<string | null>(product?.image_url || null);

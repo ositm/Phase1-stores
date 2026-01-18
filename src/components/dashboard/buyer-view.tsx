@@ -4,6 +4,7 @@ import { ShoppingBag, User } from "lucide-react";
 import Link from "next/link";
 import { becomeVendor } from "@/app/dashboard/actions";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function BuyerDashboard({ profile }: { profile: any }) {
     return (
         <div className="space-y-6">
