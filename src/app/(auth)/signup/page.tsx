@@ -12,6 +12,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { FormError } from "@/components/form-error";
+import { PasswordStrengthInput } from "@/components/auth/password-strength-input";
 
 export default async function SignupPage(props: {
     searchParams: Promise<{ error?: string }>;
@@ -51,8 +52,7 @@ export default async function SignupPage(props: {
                         <Input id="phone" name="phone" type="tel" placeholder="+234..." required />
                     </div>
                     <div className="space-y-2">
-                        <Label htmlFor="password">Password</Label>
-                        <Input id="password" name="password" type="password" required />
+                        <PasswordStrengthInput id="password" name="password" required />
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="accountType">Account Type</Label>

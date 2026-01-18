@@ -35,6 +35,22 @@ export async function signup(formData: FormData) {
         is_vendor: formData.get("accountType") === "vendor",
     };
 
+    // Password Validation
+    const password = data.password;
+    if (
+        password.length < 12 ||
+        !/[A-Z]/.test(password) ||
+        !/[a-z]/.test(password) ||
+        !/[0-9]/.test(password) ||
+        !/[^A-Za-z0-9]/.test(password)
+    ) {
+        redirect(
+            `/signup?error=${encodeURIComponent(
+                "Password must be at least 12 characters and include uppercase, lowercase, number, and symbol."
+            )}`
+        );
+    }
+
     const { error } = await supabase.auth.signUp({
         email: data.email,
         password: data.password,
